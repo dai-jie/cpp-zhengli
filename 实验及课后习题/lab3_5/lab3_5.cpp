@@ -4,7 +4,7 @@ using namespace std;
 int fib(int n){
 	if(n==1||n==2){
 		cout<<"return 1\n";
-		return 1;
+		return (1);
 	}
 	else{
 		cout<<"Call fib("<<n-1<<")+fib("<<n-2<<")\n";
