@@ -17,7 +17,7 @@ private:
 	double balance,rate;
 	int lastDate;
 	double accumulation;
-	void record(int date,double amount);
+	void record(int date,double amount); //修改当前余额并将余额输出
 	double accumulate(int date);
 };
 SavingsAccount::SavingsAccount(int date,int id,double rate):id(id),balance(0),rate(rate),lastDate(date),accumulation(0){
@@ -35,7 +35,7 @@ void SavingsAccount::withdraw(int date,double amount){
 	else
 		record(date,-amount);
 }
-void SavingsAccount::settle(int date){
+void SavingsAccount::settle(int date){ //计算年息
 	double interest=accumulate(date)*rate/365;
 	if(interest!=0)
 		record(date,interest);
@@ -49,7 +49,7 @@ void SavingsAccount::record(int date,double amount){
 	cout<<date<<"\t#"<<id<<"\t"<<amount<<"\t"<<balance<<endl;
 }
 double SavingsAccount::accumulate(int date){
-	return (date-lastDate)*balance+accumulation;
+	return (static_cast<double>(date)- static_cast<double>(lastDate))*balance+accumulation;
 }
 
 int main(){

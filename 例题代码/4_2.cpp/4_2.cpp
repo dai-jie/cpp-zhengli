@@ -6,6 +6,7 @@ public:
 	Point(int xx=0,int yy=0){
 		x=xx;
 		y=yy;
+		cout << "Calling the constructor" << endl;
 	}
 	Point(Point &p);
 	int getX(){
